@@ -1,7 +1,8 @@
 KhtBMA
 ======
 
-An unofficial battle.net authenticator for n9 and n950 Meego Devices
+An unofficial battle.net authenticator for n9 and n950 Meego Devices.
+Permit to use a 'SecureID' with Blizzard Games Diablo and World of Warcraft
 
 ScreenShots
 -----------

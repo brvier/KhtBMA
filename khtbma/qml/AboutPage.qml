@@ -23,7 +23,7 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 48
         font.bold: true
-        text: qsTr("KhtBMA v")+Authenticator.__version__
+        text: qsTr("KhtBMA v")+__version__
     }
     Label {
         id: label2
