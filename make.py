@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     p=pypackager.PyPackager("khtbma")
     p.display_name = 'KhtBMA'
-    p.version = khtnotes.__version__
+    p.version = khtbma.__version__
     p.buildversion = __build__
     p.description="An unofficial Battle.net Authenticator for Nokia n9 and n950 MeeGo Devices. Usefull for having more secure login in some Blizzard Games like World of Warcraft and Diablo III."
     p.upgrade_description=__upgrade__
