@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=net.khertan.khtbma
+Exec=/opt/khtbma/__init__.py
+

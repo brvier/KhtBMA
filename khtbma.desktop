@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=KhtBMA
+Exec=/usr/bin/invoker --type=e -n -s python /opt/khtbma/__init__.py
+Icon=khtbma
+
