@@ -40,7 +40,7 @@ if __name__ == "__main__":
     p.display_name = 'KhtBMA'
     p.version = khtnotes.__version__
     p.buildversion = __build__
-    p.description="An unofficial Battle.net Authentificator for Nokia n9 and n950 MeeGo Devices."
+    p.description="An unofficial Battle.net Authenticator for Nokia n9 and n950 MeeGo Devices. Usefull for having more secure login in some Blizzard Games like World of Warcraft and Diablo III."
     p.upgrade_description=__upgrade__
     p.author=__author__
     p.maintainer=__author__    

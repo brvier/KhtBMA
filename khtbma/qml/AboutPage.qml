@@ -99,7 +99,7 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 18
         font.bold: false
-        text: qsTr("KhtBMA is an unofficial mobile Battle.net Authentificator. It s based on the following library https://github.com/Adys/python-bna, PySide, Qt")
+        text: qsTr("KhtBMA is an unofficial Mobile Battle.net Authentificator. It s based on the following library https://github.com/Adys/python-bna, PySide, Qt")
     }
 
     ToolBarLayout {
