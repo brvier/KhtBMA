@@ -39,7 +39,7 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 24
         font.bold: false
-        text: qsTr("Khertan Battle.net Mobile Authentificator")
+        text: qsTr("Khertan Battle.net Mobile Authenticator")
     }
     Label {
         id: label3
