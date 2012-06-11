@@ -22,12 +22,12 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 18
         font.bold: true
-        text: qsTr("1. Rendez vous sur www.battle.net/bma")
+        text: qsTr("1. Go to www.battle.net/bma")
     }
     Label {
         id: explain2
         anchors.top: explain1.bottom
-        anchors.topMargin: 20
+        anchors.topMargin: 10
         anchors.left: parent.left
         anchors.leftMargin: 10
         anchors.right: parent.right
@@ -36,7 +36,7 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 18
         font.bold: true
-        text: qsTr("2. Connectez-vous au compte Battle.net que vous souhaitez protéger.")
+        text: qsTr("2. Connect to the account you want secure.")
     }
 
     Label {
@@ -51,7 +51,7 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 18
         font.bold: true
-        text: qsTr("3. Cliquer sur le bouton <<Ajouter un Authentificator>> du Battle.net Mobile Authentificator.")
+        text: qsTr("3. Click on the button 'Add a Battle.net Authenticator' of the Battle.net Mobile Authenticator.")
     }
     Label {
         id: explain4
@@ -65,7 +65,7 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 18
         font.bold: true
-        text: qsTr("4. Vérifié votre adresse e-mail.")
+        text: qsTr("4. Check your email adress.")
     }
     Label {
         id: explain5
@@ -79,7 +79,7 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 18
         font.bold: true
-        text: qsTr("5. Saisissez le numéro de série ci-dessous...")
+        text: qsTr("5. Enter the following serial number...")
     }
     Label {
         id: serial
@@ -104,7 +104,7 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 18
         font.bold: true
-        text: qsTr("6. ...accompagné du code suivant :")
+        text: qsTr("6. ...with the following code :")
     }
     Label {
         id: secret

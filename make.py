@@ -36,8 +36,8 @@ if __name__ == "__main__":
     except:
         pass
 
-    p=pypackager.PyPackager("khtnotes")
-    p.display_name = 'KhtNotes'
+    p=pypackager.PyPackager("khtbma")
+    p.display_name = 'KhtBMA'
     p.version = khtnotes.__version__
     p.buildversion = __build__
     p.description="An unofficial Battle.net Authentificator for Nokia n9 and n950 MeeGo Devices."

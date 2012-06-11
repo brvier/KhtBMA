@@ -70,7 +70,7 @@ class Authenticator(QObject):
             self._settings.setValue("SECRET", hexlify(self._secret).decode("ascii"))
             self._settings.setValue("SERIAL", self._serial)
             self.sync()
-        except bna.HTTPError, e:
+        except Except, e:
             self.on_error.emit("Could not connect: %s" % (unicode(e)))
        
     @Slot()

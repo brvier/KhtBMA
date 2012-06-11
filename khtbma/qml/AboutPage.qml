@@ -23,7 +23,7 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 48
         font.bold: true
-        text: qsTr("KhtBMA v1.0.0")
+        text: qsTr("KhtBMA v")+Authenticator.__version__
     }
     Label {
         id: label2
@@ -69,7 +69,7 @@ Page {
         font.family: "NokiaPure"
         font.pixelSize: 24
         font.bold: false
-        text: qsTr("By Benoit HERVIER <khertan@khertan.net>")
+        text: qsTr("By Benoit HERVIER (Khertan)")
     }
     Label {
         id: label5
