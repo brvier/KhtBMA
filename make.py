@@ -47,7 +47,7 @@ if __name__ == "__main__":
     p.email=__mail__
     p.depends = "python, python-pyside.qtgui, python-pyside.qtdeclarative, python-pyside.qtcore, python-pyside.qtopengl"
     p.suggests = ""
-    p.section="user/security"
+    p.section="user/games"
     p.arch="armel"
     p.urgency="low"
     p.icon='khtbma.png'
@@ -73,5 +73,5 @@ if __name__ == "__main__":
     p['/usr/share/applications'] = ['khtbma.desktop',]
     p["/opt"] = files
     
-    print p.generate(build_binary=True,build_src=False)
-    print p.generate(build_binary=False,build_src=True)    
+    print p.generate(build_binary=True,build_src=True)
+    #print p.generate(build_binary=False,build_src=True)    
