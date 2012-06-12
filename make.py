@@ -25,7 +25,7 @@ import socket
 import khtbma
 import pypackager
 
-__build__ = '1'
+__build__ = '3'
 __author__ = "Benoît HERVIER (khertan)"
 __mail__ = "khertan@khertan.net"
 __upgrade__ = '''First public release'''
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     p.section="user/games"
     p.arch="armel"
     p.urgency="low"
-    p.icon='khtbma.png'
+    p.icon='khtbma_64.png'
     p.distribution="harmattan"
     p.repository="Khertan Repository"
     p.bugtracker = 'http://github.com/khertan/KhtBMA/issues'
