@@ -124,9 +124,22 @@ Page {
             topMargin: 40
         }
         text: qsTr("Request new serial")
-        onClicked: {Authenticator.new_serial();}
+        onClicked: {newSerialDialog.open()}
     }
-
+    
+    
+    QueryDialog {
+        id: newSerialDialog
+        icon: Qt.resolvedUrl('khtbma.png')
+        titleText: "Warning"
+        message: "Are you sure you want to generate a new serial, the old one must before be removed from your battle.net account ?"
+        acceptButtonText: qsTr("Accept")
+        rejectButtonText: qsTr("Cancel")
+        onAccepted: {
+                Authenticator.new_serial();
+        }
+    }
+    
     ToolBarLayout {
         id: commonPageTools
         visible: true
