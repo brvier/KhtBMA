@@ -27,7 +27,7 @@ import bna
 
 __author__ = 'Benoit HERVIER (Khertan)'
 __email__ = 'khertan@khertan.net'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 class Authenticator(QObject):
 
