@@ -15,20 +15,16 @@
 
 import os
 import sys
-import shutil
-import time
-import string
 from glob import glob
-from datetime import datetime
-import socket
 
 import khtbma
 import pypackager
 
-__build__ = '3'
+__build__ = '1'
 __author__ = "Benoît HERVIER (khertan)"
 __mail__ = "khertan@khertan.net"
-__upgrade__ = '''First public release'''
+__upgrade__ = '''1.0: Initial Public Release
+1.1: Better use of harmattan invoker'''
 
 if __name__ == "__main__":
     try:
@@ -58,15 +54,15 @@ if __name__ == "__main__":
     p.maemo_flags = 'visible'
     p.meego_desktop_entry_filename = '/usr/share/applications/khtbma.desktop'
     files = []
-    p.postinst = """"""
+    p.postinst = '''#!/bin/sh
+chmod +x /opt/khtbma/__init__.py'''
 
     #Src
-    srcpath = '/home/user/MyDocs/Projects/KhtBMA/khtbma'
-    for root, dirs, fs in os.walk(srcpath):
+    #Src
+    for root, dirs, fs in os.walk(os.path.join(os.path.dirname(__file__), p.name)):
       for f in fs:
-        prefix = os.path.relpath(os.path.join(root,f),(os.path.dirname(srcpath)))
-        print root, prefix
-        files.append(prefix)
+        files.append(os.path.join(root, f))
+
 
     p['/usr/share/dbus-1/services'] = ['khtbma.service',]
     p['/usr/share/icons/blanco/80x80/apps'] = ['khtbma.png',]
@@ -74,4 +70,10 @@ if __name__ == "__main__":
     p["/opt"] = files
     
     print p.generate(build_binary=True,build_src=True)
-    #print p.generate(build_binary=False,build_src=True)    
+    if not os.path.exists('dists'):
+        os.mkdir('dists')
+    for filepath in glob(p.name+'_'+p.version+'-'+p.buildversion+'*'):
+        os.rename(filepath, os.path.join(os.path.dirname(filepath), 'dists', os.path.basename(filepath)))
+
+
+    
