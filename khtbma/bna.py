@@ -7,7 +7,7 @@ Specification can be found here:
 Python implementation by Jerome Leclanche <jerome.leclanche@gmail.com>
 """
 
-__version__ = "3.0"
+__version__ = "3.1"
 
 import hmac
 from binascii import hexlify
@@ -104,11 +104,15 @@ def requestNewSerial(region="US", model="Motorola RAZR v3"):
 	if region not in ("EU", "US"):
 		raise ValueError("Unexpected region: %r" % (region))
 
-	return {"serial": serial, "secret": secret}
+	return serial, secret
 
 def bytesToRestoreCode(digest):
 	ret = []
 	for i in digest:
+		# Python2 compat
+		if isinstance(i, str):
+			i = ord(i)
+
 		c = i & 0x1f
 		if c < 10:
 			c += 48

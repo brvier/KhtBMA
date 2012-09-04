@@ -11,6 +11,9 @@ PageStackWindow {
         id: mainPage
     }
 
+    RestorePage {
+        id: restorePage
+    }
     SetupPage {
         id: setupPage
     }
@@ -23,18 +26,25 @@ PageStackWindow {
         ToolIcon {
             platformIconId: "toolbar-view-menu"
             anchors.right: (parent === undefined) ? undefined : parent.right
-            onClicked: (myMenu.status === DialogStatus.Closed) ? myMenu.open() : myMenu.close()
+            onClicked: (mainMenu.status === DialogStatus.Closed) ? mainMenu.open() : mainMenu.close()
         }
     }
 
-
     Menu {
-        id: myMenu
+        id: mainMenu
         visualParent: pageStack
         MenuLayout {
             MenuItem { text: qsTr("About"); onClicked: (pageStack.push(aboutPage)) }
             MenuItem { text: qsTr("Setup"); onClicked: (pageStack.push(setupPage))}
         }
+    }
+
+    QueryDialog {
+        id: viewRestoreCode
+        icon: Qt.resolvedUrl('khtbma.png')
+        titleText: 'Code'
+        message: "Your restore code is : " + Authenticator.getRestoreCode()
+        acceptButtonText: qsTr("Close")
     }
 
     InfoBanner{
