@@ -123,7 +123,7 @@ Page {
         anchors {
             horizontalCenter: parent.horizontalCenter
             top: secret.bottom
-            topMargin: 30
+            topMargin: 40
         }
         text: qsTr("Request new serial")
         onClicked: {newSerialDialog.open()}
@@ -134,23 +134,13 @@ Page {
         anchors {
             horizontalCenter: parent.horizontalCenter
             top: newSerialButton.bottom
-            topMargin: 30
+            topMargin: 40
             }
         text: qsTr("Get Restore Code")
         onClicked: {viewRestoreCode.open();}
     }
-    Button{
-        id: restoreSerialButton
-        anchors {
-            horizontalCenter: parent.horizontalCenter
-            top: getRestoreCodeButton.bottom
-            topMargin: 30
-            }
-        text: qsTr("Restore a serial")
-        onClicked: {pageStack.push(restorePage);}
-        }
 
-    QueryDialog {
+QueryDialog {
         id: viewRestoreCode
         icon: Qt.resolvedUrl('khtbma.png')
         titleText: 'Code'
@@ -175,7 +165,6 @@ Page {
         visualParent: pageStack
         MenuLayout {
             MenuItem { text: qsTr('About'); onClicked: (pageStack.push(aboutPage))}
-        //    MenuItem { text: qsTr('Get restore code'); onClicked: (viewRestoreCode.open())}
             MenuItem { text: qsTr('Restore Serial'); onClicked: (pageStack.push(restorePage))}
         }
     }
