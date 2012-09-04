@@ -27,7 +27,7 @@ import bna
 
 __author__ = 'Benoit HERVIER (Khertan)'
 __email__ = 'khertan@khertan.net'
-__version__ = '1.1.0'
+__version__ = '1.2.0'
 
 class Authenticator(QObject):
 
@@ -94,6 +94,18 @@ class Authenticator(QObject):
         self._serial = serial
         self._settings.setValue("SERIAL", self._serial)
         self.on_serialChanged.emit()
+
+    @Slot(result=unicode)
+    def getRestoreCode(self):
+        return unicode(bna.getRestoreCode(self._serial, self._secret))
+
+    @Slot(unicode, unicode)
+    def RestoreSerial(self, serial, restore_code):
+        try:
+            self._set_serial(serial)
+            bna.restore(serial, restore_code)
+        except ValueError, err:
+            self.on_error.emit(unicode(err))
 
     def _get_token(self):
         return self._token

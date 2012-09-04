@@ -6,10 +6,12 @@ Page {
     orientationLock: PageOrientation.LockPortrait
     
     Image {
+        id:backg
         anchors.fill: parent
         source: 'background.png'
+        fillMode: Image.PreserveAspectCrop
+        sourceSize.height: 800
     }
-
     Label {
         id: label
         anchors.centerIn: parent
@@ -40,7 +42,7 @@ Page {
             topMargin: 100
         }
         text: qsTr("Resync")
-        onClicked: {Authenticator.sync();}
+        onClicked: {Authenticator.sync();console.log(backg.height);}
         visible: false
     }
 }

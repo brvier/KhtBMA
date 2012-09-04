@@ -2,11 +2,12 @@ import QtQuick 1.1
 import com.nokia.meego 1.0
 
 Page {
-    tools: commonPageTools
+    tools: setupTools
     orientationLock: PageOrientation.LockPortrait
     
     Image {
         anchors.fill: parent
+        fillMode: Image.PreserveAspectCrop
         source: 'background.png'
     }
 
@@ -118,16 +119,45 @@ Page {
         text: Authenticator.token
     }
     Button{
+        id: newSerialButton
         anchors {
             horizontalCenter: parent.horizontalCenter
             top: secret.bottom
-            topMargin: 40
+            topMargin: 30
         }
         text: qsTr("Request new serial")
         onClicked: {newSerialDialog.open()}
     }
     
-    
+    Button{
+        id: getRestoreCodeButton
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            top: newSerialButton.bottom
+            topMargin: 30
+            }
+        text: qsTr("Get Restore Code")
+        onClicked: {viewRestoreCode.open();}
+    }
+    Button{
+        id: restoreSerialButton
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            top: getRestoreCodeButton.bottom
+            topMargin: 30
+            }
+        text: qsTr("Restore a serial")
+        onClicked: {pageStack.push(restorePage);}
+        }
+
+    QueryDialog {
+        id: viewRestoreCode
+        icon: Qt.resolvedUrl('khtbma.png')
+        titleText: 'Code'
+        message: "Your restore code is : " + Authenticator.getRestoreCode()
+        acceptButtonText: qsTr("Close")
+        }
+
     QueryDialog {
         id: newSerialDialog
         icon: Qt.resolvedUrl('khtbma.png')
@@ -139,10 +169,21 @@ Page {
                 Authenticator.new_serial();
         }
     }
-    
+
+  Menu {
+        id: setupMenu
+        visualParent: pageStack
+        MenuLayout {
+            MenuItem { text: qsTr('About'); onClicked: (pageStack.push(aboutPage))}
+        //    MenuItem { text: qsTr('Get restore code'); onClicked: (viewRestoreCode.open())}
+            MenuItem { text: qsTr('Restore Serial'); onClicked: (pageStack.push(restorePage))}
+        }
+    }
+
     ToolBarLayout {
-        id: commonPageTools
+        id: setupTools
         visible: true
+        
         ToolIcon {
             platformIconId: "toolbar-back"
             anchors.left: (parent === undefined) ? undefined : parent.left
@@ -151,7 +192,8 @@ Page {
         ToolIcon {
             platformIconId: "toolbar-view-menu"
             anchors.right: (parent === undefined) ? undefined : parent.right
-            onClicked: (myMenu.status === DialogStatus.Closed) ? myMenu.open() : myMenu.close()
+            onClicked: (setupMenu.status === DialogStatus.Closed) ? setupMenu.open()    : setupMenu.close()
         }
     }
+    
 }

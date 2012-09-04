@@ -24,7 +24,8 @@ __build__ = '1'
 __author__ = "Benoît HERVIER (khertan)"
 __mail__ = "khertan@khertan.net"
 __upgrade__ = '''1.0: Initial Public Release
-1.1: Better use of harmattan invoker'''
+1.1: Better use of harmattan invoker
+1.2: Add restore serial capabilities'''
 
 if __name__ == "__main__":
     try:
@@ -39,7 +40,7 @@ if __name__ == "__main__":
     p.description="An unofficial Battle.net Authenticator for Nokia n9 and n950 MeeGo Devices. Usefull for having more secure login in some Blizzard Games like World of Warcraft and Diablo III."
     p.upgrade_description=__upgrade__
     p.author=__author__
-    p.maintainer=__author__    
+    p.maintainer=__author__
     p.email=__mail__
     p.depends = "python, python-pyside.qtgui, python-pyside.qtdeclarative, python-pyside.qtcore, python-pyside.qtopengl"
     p.suggests = ""
@@ -68,7 +69,7 @@ chmod +x /opt/khtbma/__init__.py'''
     p['/usr/share/icons/blanco/80x80/apps'] = ['khtbma.png',]
     p['/usr/share/applications'] = ['khtbma.desktop',]
     p["/opt"] = files
-    
+
     print p.generate(build_binary=True,build_src=True)
     if not os.path.exists('dists'):
         os.mkdir('dists')
@@ -76,4 +77,4 @@ chmod +x /opt/khtbma/__init__.py'''
         os.rename(filepath, os.path.join(os.path.dirname(filepath), 'dists', os.path.basename(filepath)))
 
 
-    
+
