@@ -39,14 +39,6 @@ PageStackWindow {
         }
     }
 
-    QueryDialog {
-        id: viewRestoreCode
-        icon: Qt.resolvedUrl('khtbma.png')
-        titleText: 'Code'
-        message: "Your restore code is : " + Authenticator.getRestoreCode()
-        acceptButtonText: qsTr("Close")
-    }
-
     InfoBanner{
                       id:errorBanner
                       text: 'An error occur'
