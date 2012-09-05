@@ -27,7 +27,7 @@ import bna
 
 __author__ = 'Benoit HERVIER (Khertan)'
 __email__ = 'khertan@khertan.net'
-__version__ = '1.2.0'
+__version__ = '1.3.0'
 
 class Authenticator(QObject):
 
@@ -64,13 +64,14 @@ class Authenticator(QObject):
     def new_serial(self):
         try:
             authenticator = bna.requestNewSerial(self._region)
-            self._secret = authenticator["secret"]
-            self._set_serial(authenticator["serial"])
+            self._secret = authenticator[1]
+            self._set_serial(authenticator[0])
             self._settings.setValue("SECRET", hexlify(self._secret).decode("ascii"))
             self._settings.setValue("SERIAL", self._serial)
             self.sync()
         except Exception, e:
             self.on_error.emit("Could not connect: %s" % (unicode(e)))
+            raise
 
     @Slot()
     def sync(self):

@@ -25,7 +25,8 @@ __author__ = "Benoît HERVIER (khertan)"
 __mail__ = "khertan@khertan.net"
 __upgrade__ = '''1.0: Initial Public Release
 1.1: Better use of harmattan invoker
-1.2: Add restore serial capabilities'''
+1.2: Add restore serial capabilities
+1.3: Fix request new serial feature due to a change in bna api'''
 
 if __name__ == "__main__":
     try:
