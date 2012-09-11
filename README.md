@@ -21,7 +21,7 @@ Licenced under GPLv3.
 
 [1]:https://github.com/khertan/KhtBMA/
 [2]:https://github.com/khertan/KhtBMA/issues
-[4]:Screenshot_KhtBMA_1.png
-[5]:Screenshot_KhtBMA_2.png
-[6]:Screenshot_KhtBMA_3.png
+[4]:http://khertan.net/medias/Screenshot_KhtBMA_1.png
+[5]:http://khertan.net/medias/Screenshot_KhtBMA_2.png
+[6]:http://khertan.net/medias/Screenshot_KhtBMA_3.png
 [7]:https://github.com/Adys/python-bna
